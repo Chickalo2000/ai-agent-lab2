@@ -10,6 +10,17 @@ if (!process.env.GITHUB_TOKEN) {
   process.exit(1); // Exit the process with an error code
 }
 
+// Import the necessary module from LangChain
+import { ChatOpenAI } from 'langchain/chat_models';
+
+// Create a ChatOpenAI instance
+const chat = new ChatOpenAI({
+  model: 'openai/gpt-4o',
+  temperature: 0, // Deterministic responses
+  openAIApiKey: process.env.GITHUB_TOKEN, // Use GITHUB_TOKEN as the API key
+  basePath: 'https://models.github.ai/inference' // Configure the base URL
+});
+
 // Define the main async function
 async function main() {
   console.log('🚀 Starting the LangChain AI Agent Application...');
