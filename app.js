@@ -13,6 +13,9 @@ if (!process.env.GITHUB_TOKEN) {
 // Import the necessary module from LangChain
 import { ChatOpenAI } from 'langchain/chat_models';
 
+// Import the invoke method
+import { invoke } from 'langchain/chat_models';
+
 // Create a ChatOpenAI instance
 const chat = new ChatOpenAI({
   model: 'openai/gpt-4o',
@@ -26,6 +29,15 @@ async function main() {
   console.log('🚀 Starting the LangChain AI Agent Application...');
 
   // Add your LangChain logic here
+  const query = 'What is 25 * 4 + 10?';
+  console.log('🤖 Sending query to the model:', query);
+
+  try {
+    const response = await chat.invoke(query);
+    console.log('💡 AI Response:', response.content);
+  } catch (error) {
+    console.error('❌ Error invoking the model:', error);
+  }
 }
 
 // Call the main function and handle errors
