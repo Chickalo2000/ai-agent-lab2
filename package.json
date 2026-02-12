@@ -14,7 +14,7 @@
     "@langchain/community": "^1.1.15",
     "@langchain/core": "^1.1.23",
     "@langchain/openai": "^1.2.7",
-    "dotenv": "^17.2.4",
-    "langchain": "^1.2.22"
+    "dotenv": "^16.6.1",
+    "langchain": "^1.2.23"
   }
 }

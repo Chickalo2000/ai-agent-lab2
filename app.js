@@ -16,7 +16,7 @@ import { ChatOpenAI } from 'langchain/chat_models';
 // Import the invoke method
 import { invoke } from 'langchain/chat_models';
 
-// Create a ChatOpenAI instance
+// Create a ChatOpenAI instanceimport { ChatModel } from "langchain/schema";import { ChatModel } from "langchain/schema";
 const chat = new ChatOpenAI({
   model: 'openai/gpt-4o',
   temperature: 0, // Deterministic responses
